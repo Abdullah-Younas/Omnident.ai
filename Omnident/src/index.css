@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+body{
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+    background-color: #0B0F14;
+    margin: 0;
+    padding: 0;
+}
+
+.Nav-bar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.HeroBGImg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;          /* <-- important: explicitly pin to right */
+  bottom: 0;         /* <-- optional if you want full height */
+  width: 100%;
+  object-fit: cover;
+  z-index: -10;
+  opacity: 0.5;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+
+.HeroContent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.PatientJourney{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 3rem;
+}
+
+.PatientJourney .PatientJourneyHeader{
+    padding-bottom: 41rem;
+}
+
+.PatientJourney .FrSlider{
+    position: absolute;
+    width: 200px;
+    height: 250px;
+    top: 20%;
+    left: calc(50% - 100px);
+    transform-style: preserve-3d;
+    transform: perspective(2000px);
+    animation: autoRun 20s linear infinite;
+}
+@keyframes autoRun {
+    from {
+        transform: perspective(2000px) rotateX(-10deg) rotateY(0deg);
+    }
+    to {
+        transform: perspective(2000px) rotateX(-10deg) rotateY(360deg);
+    }
+}
+.PatientJourney .FrSlider .FrSliderItem{
+    position: absolute;
+    inset: 0 0 0 0;
+    transform: 
+        rotateY(calc((var(--position) - 1) * (360deg / var(--quantity))))
+        translateZ(300px);
+}
+
+.PatientJourney .FrSlider .FrSliderItem .FrSliderItem01Content{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+@theme {
+    --color-TextHeading: #69F0AE;
+    --color-TextPrimary: #E0F7FA;
+    --color-TextSecondary: #90A4AE;
+    --color-OmniBg: #0B0F14;
+    --color-ButtonLight : #00E5FF;
+}
