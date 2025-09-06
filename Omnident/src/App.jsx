@@ -45,8 +45,8 @@ function App() {
              <div className="FrSlider mt-10" style={{ "--quantity": 5 }}>
               <div className="FrSliderItem" style={{ "--position": 1 }}>
                 <div className="FrSliderItem01Content bg-amber-50 rounded">
-                  <h1 className='text-TextHeading text-xl font-bold text-left w-fit'>BEFORE THE APPOINTMENT</h1>
-                  <h2 className='text-TextHeading text-lg font-semibold text-left w-fit'>Engaging Patient Aquisition</h2>
+                  <h1 className='text-TextHeading text-xl font-bold text-left w-fit hover:text-ButtonLight cursor-pointer transition-all duration-[500ms] ease-in'>  BEFORE THE APPOINTMENT</h1>
+                <h2 className='text-TextHeading text-lg font-semibold text-left w-fit'>Engaging Patient Aquisition</h2>
                 </div>
               </div>
               <div className="FrSliderItem" style={{ "--position": 2 }}>
