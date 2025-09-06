@@ -1,7 +1,7 @@
 const ConnectionCard = ({ Rotation, Color, Icon, Title, Content }) => {
   return (
     <div
-      className="w-52 h-62 rounded-lg m-2 p-4 hover:shadow-lg transition-transform duration-300 ease-in-out cursor-pointer flex items-center justify-center flex-col text-2xl text-white"
+      className=" w-52 h-62 rounded-lg m-2 p-4 hover:shadow-lg transition-transform duration-300 ease-in-out cursor-pointer flex items-center justify-center flex-col text-2xl text-white"
       style={{ transform: `rotate(${Rotation}deg)`, backgroundColor: Color }}
     >
       <div className="ConnectionIcon text-OmniBg">
