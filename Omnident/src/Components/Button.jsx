@@ -23,7 +23,7 @@ const Button = () => {
       onMouseEnter={() => setHovering(true)}
       onMouseLeave={() => setHovering(false)}
       onClick={handleClick}
-      className="relative overflow-hidden border-2 border-ButtonLight text-white font-bold py-2 px-6 rounded"
+      className="relative overflow-hidden border-2 border-ButtonLight text-white font-bold py-1 px-3 rounded"
     >
       {hovering && (
         <span
