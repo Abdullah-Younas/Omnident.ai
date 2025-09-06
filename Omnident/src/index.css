@@ -71,7 +71,26 @@ body{
     flex-direction: column;
     align-items: center; /* 👈 Align everything left */
 }
-
+.Pricing{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.Booking{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.ImplementationPricing{
+    margin-top: 1rem;
+    width: 89%;
+    height: 480px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+}
 .CaseStudiesRatings {
     width: 100%;
     display: flex;
@@ -172,4 +191,7 @@ body{
     --color-TextSecondary: #90A4AE;
     --color-OmniBg: #0B0F14;
     --color-ButtonLight : #00E5FF;
+    --color-OmniRed: #FF1744;
+    --color-pricegradient-left: #4D526B;
+    --color-pricegradient-right: #19A460;
 }
