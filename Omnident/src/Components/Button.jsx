@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Button = () => {
+const Button = ({ Text, onClick }) => {
   const [pos, setPos] = useState({ x: 0, y: 0 });
   const [hovering, setHovering] = useState(false);
   const [clicked, setClicked] = useState(false);
@@ -13,8 +13,9 @@ const Button = () => {
     });
   };
 
-  const handleClick = () => {
+  const handleClick = (e) => {
     setClicked(true); // grows once and stays
+    if (onClick) onClick(e); // run the action passed from App.jsx
   };
 
   return (
@@ -34,14 +35,14 @@ const Button = () => {
             left: pos.x,
             top: pos.y,
             transform: clicked
-              ? "translate(-50%, -50%) scale(8)" // grow from center
-              : "translate(-50%, -50%) scale(1)", // normal size
+              ? "translate(-50%, -50%) scale(8)"
+              : "translate(-50%, -50%) scale(1)",
             transition: "transform 0.4s ease-out",
           }}
         />
       )}
 
-      <span className="relative z-10">Click Me</span>
+      <span className="relative z-10">{Text}</span>
     </button>
   );
 };
