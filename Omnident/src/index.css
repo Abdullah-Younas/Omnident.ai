@@ -99,6 +99,14 @@ body{
     flex-direction: column;
     border-radius: 15px;
 }
+.PImplementationPricing{
+    margin-top: 1rem;
+    width: 100%;
+    height: 480px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+}
 .CaseStudiesRatings {
     width: 100%;
     display: flex;
@@ -142,7 +150,21 @@ body{
   0% { transform: translateY(-50%); }
   100% { transform: translateY(0); }
 }
-
+@keyframes appear {
+  from {
+    opacity: 0;
+    scale: 0.8;
+  }
+  to{
+    opacity: 1;
+    scale: 1;
+  }
+}
+.blocK {
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%; /* start as soon as top enters */
+}
 .animate-scroll-up {
   animation: scroll-up 20s linear infinite;
 }
@@ -227,6 +249,7 @@ body{
 }
 .SeamlessIntegration {
   width: 100%;
+  height: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -243,7 +266,7 @@ body{
   font-weight: bold;
   font-size: 1.25rem;
   width: 100%;
-  max-width: 350px;
+  max-width: 200px;
   margin: 0 auto 2rem auto;
 }
 
@@ -338,6 +361,18 @@ body{
 .integration-img:hover {
   filter: grayscale(0%);
 }
+@media (min-width: 1440px) {
+  .CaseStudiesRatings{
+    display: flex;
+    justify-content: center;
+  }
+}
+@media (min-width: 1024px) {
+  .CaseStudiesRatings{
+    display: flex;
+    justify-content: center;
+  }
+}
 @media (min-width: 768px) {
     .PatientJour02Buttons{
         width: 100% !important;
@@ -374,8 +409,14 @@ body{
     .ImplementationPricing{
         display: flex;
         justify-content: center;
-        width: 40% !important;
+        max-width: 40% !important;
         height:100% !important;
+    }
+    .PImplementationPricing{
+        display: flex;
+        justify-content: center;
+        max-width: 41% !important;
+        height: 475px !important;
     }
     .Booking{
         width: 100%;
@@ -415,6 +456,14 @@ body{
         flex-direction: column;
         border-radius: 15px;
     }
+    .PImplementationPricing{
+              margin-top: 1rem;
+        width: 100%;
+        height: 340px;
+        display: flex;
+        flex-direction: column;
+        border-radius: 15px;
+    }
     .PatientJour02Buttons{
         width: 60%;
     }
@@ -427,7 +476,78 @@ body{
     }
     .integration-title {
     font-size: 1.5rem;
+    max-width: 300px;
     }
+}
+/* make cards flexible and use content-driven height */
+.ImplementationPricing,
+.PImplementationPricing {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  height: auto;            /* allow content to decide height */
+  min-height: 340px;       /* baseline so they don't look tiny */
+  padding: 1.25rem;
+  overflow: visible;
+}
+
+/* ensure CTA sits at the bottom of the card */
+.ImplementationPricing .cta,
+.PImplementationPricing .cta {
+  margin-top: auto;
+}
+
+/* responsive list: 2 columns on larger, 1 column on small */
+.PImplementationPricing ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem 1rem;
+}
+@media (max-width: 640px) {
+  .PImplementationPricing ul {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Fix the troublesome range (480px — 799px) */
+@media (min-width: 480px) and (max-width: 799px) {
+  .ImplementationPricing,
+  .PImplementationPricing {
+    height: auto !important;    /* override any earlier fixed heights */
+    min-height: 420px;          /* give enough room for the list + button */
+    padding-bottom: 1.5rem;
+  }
+  /* make sure CTA width doesn't overflow */
+  .PImplementationPricing .cta {
+    align-self: center;
+    width: auto;
+  }
+}
+
+/* If you *must* have a fixed height on large screens keep min-height instead of forcing height */
+@media (min-width: 768px) {
+  .PImplementationPricing {
+    min-height: 475px;  /* allow some flexibility */
+    height: auto;       /* avoid hard-fixed height where possible */
+    overflow: auto;     /* safe fallback if content somehow grows */
+  }
+}
+/* Fix range 798px–1140px */
+@media (min-width: 798px) and (max-width: 1140px) {
+  .ImplementationPricing,
+  .PImplementationPricing {
+    height: auto !important;     /* let content decide */
+    min-height: 500px;           /* safe baseline */
+    padding-bottom: 1.5rem;      /* space for button */
+  }
+
+  /* ensure the CTA button sits at the bottom */
+  .PImplementationPricing .cta,
+  .ImplementationPricing .cta {
+    margin-top: auto;
+    align-self: center;          /* or flex-end if you want right-aligned */
+  }
 }
 
 @theme {
@@ -447,4 +567,5 @@ body{
     --breakpoint-m: 768px;
     --breakpoint-nm: 860px;
     --breakpoint-l: 1024px;
+    --breakpoint-xl: 1440px;
 }

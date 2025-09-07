@@ -9,8 +9,6 @@ import Boy from './assets/Boy.jpg'
 import Boy2 from './assets/Boy02.jpg'
 import Boy3 from './assets/Boy03.jpg'
 import Boy4 from './assets/Boy04.jpg'
-import Design from './assets/Design.png'
-import People from './assets/People.jpg'
 import { FaBars, FaPhone, FaArrowRight, FaTimes, FaBrain, FaBell } from 'react-icons/fa'
 import { FaMessage } from 'react-icons/fa6'
 import { PiWechatLogoDuotone } from "react-icons/pi";
@@ -25,11 +23,7 @@ import ReviewCard from './Components/ReviewCard'
 import Cal, { getCalApi } from "@calcom/embed-react";
 import BackgroundFollower from './Components/BackgroundFollower';
 import ScrambleText from './Components/ScrambleText';
-import Navbar from './Components/Navbar';
 import { useRef } from 'react';
-import BookingCalendar from './Components/BookingCalendar';
-import { DayPicker } from "react-day-picker";
-import IntegrationScroller from './Components/IntegrationScroller';
 import "react-day-picker/style.css";
 
 function App() {  
@@ -41,10 +35,6 @@ function App() {
   const PricingRef = useRef(null);
   const [isOpen, setIsOpen] = useState(false);
   const [isWide, setIsWide] = useState(window.innerWidth > 760);
-  const [Dselected, DsetSelected] = useState();
-  const [Text, setText] = useState("Title");
-  const letters  = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  const getRandomNumber = () => letters[Math.floor(Math.random() * 26)]; // random 0–99
 
   useEffect(() => {
     const handleResize = () => setIsWide(window.innerWidth > 760);
@@ -145,22 +135,24 @@ function App() {
             </ul>
           </div>
         </div>
-        <div className='w-screen h-screen ComponentsContainer p-4 pl-4 md:-translate-y-40'>
-          <img src={Girl} className='HeroBGImg'/>
-          <div className='HeroContent -mb-100 h-250'>
+        <div className='w-screen h-screen ComponentsContainer p-4 pl-4 md:-translate-y-40 '>
+          <img src={Girl} className='HeroBGImg' loading="lazy"/>
+          <div className='HeroContent -mb-100 h-250 blocK xl:pl-10'>
             <br /><br /><br /><br /><br /><br /><br />
-            <div className="w-full flex flex-col md:flex-row justify-between overflow-hidden relative">
+            <div className="w-full flex flex-col md:flex-row justify-between md:overflow-hidden relative">
               {/* Left Content */}
               <div className="  w-full max-w-[700px] md:w-1/2 flex flex-col px-4 py-8 md:py-0">
                 <ScrambleText
                   text="Pioneer The Future Of Patient Engagement"
-                  className="bg-gradient-to-r from-TEXTgradient-left to-TEXTgradient-right bg-clip-text text-transparent text-3xl font-bold text-left w-full cursor-pointer"
+                  className="bg-gradient-to-r from-TEXTgradient-left to-TEXTgradient-right bg-clip-text text-transparent text-3xl font-bold text-left w-full cursor-pointer m:text-5xl xl:text-7xl"
                   />
                 <h2 className="text-TextPrimary text-sm text-left mt-5 font-semibold s:text-xl">
                   OmniDent AI turns your traffic into new patient appointments, without lifting a finger.
                 </h2>
                 <br />
-                <Button Text={"Get Started"} onClick={scrollToBooking}/>
+                <div>
+                  <Button Text={"Get Started"} onClick={scrollToBooking} />
+                </div>
               </div>
 
               <div className='hidden md:flex w-full max-w-[600px]  justify-center'>
@@ -173,28 +165,28 @@ function App() {
 
                   {/* Left Column: scroll up */}
                   <div className="flex flex-col animate-scroll-up space-y-2 w-1/2 h-full items-center">
-                    <img src={Boy} alt="" className="w-[190px] h-[300px] object-cover" />
-                    <img src={Girl} alt="" className="w-[190px] h-[300px] object-cover" />
-                    <img src={Boy3} alt="" className="w-[190px] h-[300px] object-cover" />
-                    <img src={Girl2} alt="" className="w-[190px] h-[300px] object-cover" />
+                    <img src={Boy} alt="" className="w-[190px] h-[300px] object-cover" loading="lazy"/>
+                    <img src={Girl} alt="" className="w-[190px] h-[300px] object-cover" loading="lazy"/>
+                    <img src={Boy3} alt="" className="w-[190px] h-[300px] object-cover" loading="lazy"/>
+                    <img src={Girl2} alt="" className="w-[190px] h-[300px] object-cover" loading="lazy"/>
                     {/* Duplicate for seamless loop */}
-                    <img src={Boy} alt="" className="w-[190px] h-[300px] object-cover" />
-                    <img src={Girl} alt="" className="w-[190px] h-[300px] object-cover" />
-                    <img src={Boy3} alt="" className="w-[190px] h-[300px] object-cover" />
-                    <img src={Girl2} alt="" className="w-[190px] h-[300px] object-cover" />
+                    <img src={Boy} alt="" className="w-[190px] h-[300px] object-cover" loading="lazy"/>
+                    <img src={Girl} alt="" className="w-[190px] h-[300px] object-cover" loading="lazy"/>
+                    <img src={Boy3} alt="" className="w-[190px] h-[300px] object-cover" loading="lazy"/>
+                    <img src={Girl2} alt="" className="w-[190px] h-[300px] object-cover" loading="lazy"/>
                   </div>
 
                   {/* Right Column: scroll down */}
                   <div className="flex flex-col animate-scroll-down space-y-2 absolute top-0 w-1/2 right-0 h-full items-center">
-                    <img src={Boy2} alt="" className="w-[190px] h-[300px] object-cover" />
-                    <img src={Girl3} alt="" className="w-[190px] h-[300px] object-cover" />
-                    <img src={Boy4} alt="" className="w-[190px] h-[300px] object-cover" />
-                    <img src={Girl4} alt="" className="w-[190px] h-[300px] object-cover" />
+                    <img src={Boy2} alt="" className="w-[190px] h-[300px] object-cover" loading="lazy"/>
+                    <img src={Girl3} alt="" className="w-[190px] h-[300px] object-cover" loading="lazy"/>
+                    <img src={Boy4} alt="" className="w-[190px] h-[300px] object-cover" loading="lazy"/>
+                    <img src={Girl4} alt="" className="w-[190px] h-[300px] object-cover" loading="lazy"/>
                     {/* Duplicate for seamless loop */}
-                    <img src={Boy2} alt="" className="w-[190px] h-[300px] object-cover" />
-                    <img src={Girl3} alt="" className="w-[190px] h-[300px] object-cover" />
-                    <img src={Boy4} alt="" className="w-[190px] h-[300px] object-cover" />
-                    <img src={Girl4} alt="" className="w-[190px] h-[300px] object-cover" />
+                    <img src={Boy2} alt="" className="w-[190px] h-[300px] object-cover" loading="lazy"/>
+                    <img src={Girl3} alt="" className="w-[190px] h-[300px] object-cover" loading="lazy"/>
+                    <img src={Boy4} alt="" className="w-[190px] h-[300px] object-cover" loading="lazy"/>
+                    <img src={Girl4} alt="" className="w-[190px] h-[300px] object-cover" loading="lazy"/>
                   </div>
                 </div>
               </div>
@@ -205,10 +197,10 @@ function App() {
               <div className="flex w-full h-full ">
                 {/* Left side - Text */}
                 <div className="w-1/2 h-fullp-6">
-                  <h1 className="text-TextPrimary text-l font-bold w-full s:text-xl">
+                  <h1 className="text-TextPrimary text-l font-bold w-full s:text-xl xl:text-5xl">
                     Your favourite tool for
                   </h1>
-                  <h2 className="text-xs s:text-lg font-bold text-TextSecondary mt-2">
+                  <h2 className="text-xs s:text-lg font-bold text-TextSecondary mt-2 xl:text-2xl">
                     <ul className="list-disc list-inside">
                       <li>Reducing front desk workload</li>
                       <li>Growing your practice</li>
@@ -216,7 +208,7 @@ function App() {
                       <li>Automating appointment scheduling</li>
                     </ul>
                   </h2>
-                  <h1 className="text-TextPrimary text-l font-bold w-full mt-10 s:text-xl">
+                  <h1 className="text-TextPrimary text-l font-bold w-full mt-10 s:text-xl xl:text-2xl">
                     Checkout for yourself
                   </h1>
                 </div>
@@ -253,17 +245,17 @@ function App() {
               </div>
             </div>
           </div>
-          <div ref={PatientJourneyRef} className='MainPatientJourney '>
+          <div ref={PatientJourneyRef} className='MainPatientJourney blocK'>
             <div className='PatientJourneyHeader'>
               <ScrambleText 
                 text="AI-Powered Automation at every touchpoint"
-                className="bg-gradient-to-r from-TEXTgradient-left to-TEXTgradient-right bg-clip-text text-transparent text-4xl font-bold text-center w-full max-w-4xl mx-auto"
+                className="bg-gradient-to-r from-TEXTgradient-left to-TEXTgradient-right bg-clip-text text-transparent text-4xl font-bold text-center w-full max-w-5xl mx-auto xl:text-6xl"
               />
               <h2 className='text-TextPrimary text-sm text-center font-semibold w-full max-w-4xl mx-auto mt-4'>
                 From first contact to lifetime loyalty, OmniDent AI orchestrates seamless patient experiences that drive practice growth
               </h2>
             </div>
-            <div className="FrSlider mt-10 " style={{ "--quantity": 5 }}>
+            <div className="FrSlider mt-10 xl:mt-25 " style={{ "--quantity": 5 }}>
               <div className="FrSliderItem" style={{ "--position": 1 }}>
                 <div className="FrSliderItem01Content  rounded">
                   <FaBrain className='w-12 h-auto text-TextHeading'/>
@@ -301,11 +293,11 @@ function App() {
               </div>
             </div>
           </div>
-          <div className='PatientJour02'>
+          <div className='PatientJour02 xl:mt-5 blocK'>
             <div className='PatientJour02Header flex justify-center items-center flex-col '>
               <ScrambleText
                 text="Don’t compromise your practice with average solutions"
-                className="bg-gradient-to-r from-TEXTgradient-left to-TEXTgradient-right bg-clip-text text-transparent  text-3xl font-bold text-left m:text-center m:text-5xl w-full s:text-4xl"
+                className="bg-gradient-to-r from-TEXTgradient-left to-TEXTgradient-right bg-clip-text text-transparent  text-3xl font-bold text-left m:text-center m:text-5xl w-full s:text-4xl xl:text-center xl:w-screen"
               />
               <h2 className='text-TextSecondary text-sm text-left m:text-center font-semibold m:text-xl w-full m:w-125 s:text-lg '>See how OmniDent AI can automate your practice operations and boost patient satisfaction</h2>
             </div>
@@ -314,8 +306,8 @@ function App() {
               <Button Text={"View Case Studies"} onClick={scrollToCaseStudies}/>
             </div>
             <div className='PatientJour02Connection w-full'>
-              <h1 className='bg-gradient-to-r from-TEXTgradient-left to-TEXTgradient-right bg-clip-text text-transparent  text-3xl font-bold text-left w-full s:text-4xl'>One AI,</h1>
-              <h2 className='bg-gradient-to-r from-TEXTgradient-left to-TEXTgradient-right bg-clip-text text-transparent  text-lg text-left font-semibold w-full s:text-xl'>Three Ways to Connect With Patients</h2>
+              <h1 className='bg-gradient-to-r from-TEXTgradient-left to-TEXTgradient-right bg-clip-text text-transparent  text-3xl font-bold text-left w-full s:text-4xl xl:text-center xl:text-6xl'>One AI,</h1>
+              <h2 className='bg-gradient-to-r from-TEXTgradient-left to-TEXTgradient-right bg-clip-text text-transparent  text-lg text-left font-semibold w-full s:text-xl xl:text-center xl:text-5xl'>Three Ways to Connect With Patients</h2>
             </div>
             <div className='PatientJour02ConnectionCards pt-35 mb-10 m:pt-5 m:-mb-50'>
               <ConnectionCard Rotation={rotations[0]} Color={"#69F0AE"} Icon={FaMessage} Title={"SMS"} Content={"Patients text your practice number and instantly connect with OmniDent.ai for scheduling, questions, and more."}/>
@@ -323,7 +315,7 @@ function App() {
               <ConnectionCard Rotation={rotations[2]} Color={"#69F0AE"} Icon={FaPhone} Title={"PHONE"} Content={"Patients call your practice number and speak naturally with OmniDent AI's voice assistant."}/>
             </div>
           </div>
-          <div ref={FeaturesRef} className='MainPatientJourney'>
+          <div ref={FeaturesRef} className='MainPatientJourney blocK'>
             <div className='PatientJourneyHeader flex justify-center items-center flex-col'>
               <ScrambleText
                 text="Transforming Your Patient Journey Experience"
@@ -421,30 +413,58 @@ function App() {
               <ReviewCard Location={"Wilson Orthodontics"} Person={"Dr. James Wilson"} Content={"Best investment for our practice. Patient satisfaction is up, staff stress is down, more consultations booked."}/>
             </div>
           </div>
-          <div ref={PricingRef} className='Pricing mt-5'>
+          <div ref={PricingRef} className='Pricing mt-5 blocK'>
              <div className='PatientJour02Header'>
               <ScrambleText
               text="Investment That Transforms Everything" 
-              className="bg-gradient-to-r from-TEXTgradient-left to-TEXTgradient-right bg-clip-text text-transparent  text-3xl font-bold text-left w-full s:text-4xl"
+              className="bg-gradient-to-r from-TEXTgradient-left to-TEXTgradient-right bg-clip-text text-transparent  text-3xl font-bold text-left w-full s:text-4xl xl:text-center l:text-center xl:text-6xl"
               />
-              <h2 className='text-TextSecondary text-sm text-left font-semibold w-80 s:text-lg'>Join an exclusive cohort of forward-thinking practices. This isn't just software—it's your competitive edge.</h2>
+              <h2 className='text-TextSecondary text-sm text-left font-semibold w-80 s:text-lg l:text-center l:w-screen xl:text-center xl:w-screen'>Join an exclusive cohort of forward-thinking practices. This isn't just software—it's your competitive edge.</h2>
             </div>
-            <div className='m:flex m:justify-between'>
-              <div className='ImplementationPricing bg-gradient-to-r from-pricegradient-left to-pricegradient-right/50 p-2'>
-                <h1 className='bg-gradient-to-l from-TEXTgradient-left to-TEXTgradient-right bg-clip-text text-transparent  text-3xl/tight font-bold '>Implementation Investment <br /> $5000</h1>
-                <h2 className='text-TextPrimary text-xl font-bold'>Elite Marketing Partner</h2>
-                <h3 className='text-TextSecondary text-sm '>Your marketing credit is managed by Concepcion.work's dental specialists. Custom campaigns, proven SEO strategies, and high-value patient acquisition—all with OmniDent.ai seamlessly integrated.</h3>
-                <a href="https://concepcion.work/" className='text-ButtonLight text-xl font-bold pt-3 pb-3 hover:cursor-pointer flex gap-2 align-middle items-center'>Explore Partnership <FaArrowRight/> </a>
-                <h3 className='text-TextSecondary text-sm '>One-time setup includes $1,000 marketing activation credit</h3>
-                <h1 className='bg-gradient-to-l from-TEXTgradient-left to-TEXTgradient-right bg-clip-text text-transparent  text-lg font-semibold pt-5 '>30-Day Performance Guarantee</h1>
-                <h3 className='text-TextSecondary text-sm pt-5'>3+ new patients booked automatically in 30 days or receive a full refund (minus marketing credit deployed)</h3>
+            <div className="flex flex-col md:flex-row justify-center xl:justify-around gap-6">
+              {/* Left Card */}
+              <div className="ImplementationPricing bg-gradient-to-r from-pricegradient-left to-pricegradient-right/50 
+                p-6 flex flex-col rounded-2xl 
+                w-full max-w-[500px] min-h-[500px] h-auto">
+
+                <h1 className="bg-gradient-to-l from-TEXTgradient-left to-TEXTgradient-right bg-clip-text text-transparent text-3xl font-bold">
+                  Implementation Investment <br /> $5000
+                </h1>
+                <h2 className="text-TextPrimary text-xl font-bold">Elite Marketing Partner</h2>
+                <h3 className="text-TextSecondary text-sm">
+                  Your marketing credit is managed by Concepcion.work's dental specialists. Custom campaigns, proven SEO strategies, and high-value patient acquisition—all with OmniDent.ai seamlessly integrated.
+                </h3>
+                <a
+                  href="https://concepcion.work/"
+                  className="text-ButtonLight text-xl font-bold pt-3 pb-3 hover:cursor-pointer flex gap-2 items-center"
+                >
+                  Explore Partnership <FaArrowRight />
+                </a>
+                <h3 className="text-TextSecondary text-sm">
+                  One-time setup includes $1,000 marketing activation credit
+                </h3>
+                <h1 className="bg-gradient-to-l from-TEXTgradient-left to-TEXTgradient-right bg-clip-text text-transparent text-lg font-semibold pt-5">
+                  30-Day Performance Guarantee
+                </h1>
+                <h3 className="text-TextSecondary text-sm pt-5">
+                  3+ new patients booked automatically in 30 days or receive a full refund (minus marketing credit deployed)
+                </h3>
               </div>
-              <div className='ImplementationPricing bg-gradient-to-r from-pricegradient-left to-pricegradient-right/50 p-2'>
-                <h1 className='bg-gradient-to-l from-TEXTgradient-left to-TEXTgradient-right bg-clip-text text-transparent  text-3xl/tight font-bold '>$995/mo</h1>
-                <h2 className='text-TextPrimary text-xl font-bold'>Annual Commitment: $11,940   Save: $1,044</h2>
+
+              {/* Right Card */}
+              <div className="ImplementationPricing bg-gradient-to-r from-pricegradient-left to-pricegradient-right/50 
+                p-6 flex flex-col rounded-2xl 
+                w-full max-w-[500px] min-h-[500px] h-auto">
+
+                <h1 className="bg-gradient-to-l from-TEXTgradient-left to-TEXTgradient-right bg-clip-text text-transparent text-3xl font-bold">
+                  $995/mo
+                </h1>
+                <h2 className="text-TextPrimary text-xl font-bold">
+                  Annual Commitment: $11,940 Save: $1,044
+                </h2>
                 <br />
-                <h3 className='text-TextPrimary text-sm '>Includes:</h3>
-                <ul className='grid grid-cols-2 gap-x-6 gap-y-2 text-sm text-TextSecondary'>
+                <h3 className="text-TextPrimary text-sm">Includes:</h3>
+                <ul className="grid grid-cols-2 gap-x-6 gap-y-2 text-sm text-ButtonLight font-bold">
                   <li>24/7 Appointment Scheduling</li>
                   <li>Chat Support Available</li>
                   <li>Multi-Channel Communication</li>
@@ -457,11 +477,12 @@ function App() {
                   <li>Advanced Integrations</li>
                 </ul>
                 <br />
-                <Button Text={"Get Started"}/>
+                <Button Text={"Get Started"} />
               </div>
             </div>
+
           </div>
-          <div ref={bookingRef} className='Booking mt-5'>
+          <div ref={bookingRef} className='Booking mt-5 blocK'>
             <div className='PatientJour02Header m:w-1/2 h-max '>
               <ScrambleText
               text="Your Competitors Are Already Using AI" 
