@@ -102,20 +102,14 @@ Responsive: works seamlessly on desktop & mobile.
 
 
 
-📌 Roadmap
+📌 Future Improvements
 
  Add animation to pricing cards
 
  Improve accessibility (ARIA labels)
 
+ Add more colors and graphics
+
+ Improve user readability with Dark/Light mode
+
  Add unit tests with Jest/RTL
- 
-
-**🤝 Contributing**
-
-Contributions are welcome! Please fork the repo and submit a PR.
-
-
-**📄 License**
-
-This project is licensed under the MIT License.
