@@ -88,7 +88,7 @@ function App() {
       < BackgroundFollower/>
         <div className="relative">
           {/* Navbar Top */}
-          <div className="Nav-bar m-2 fixed z-50 w-full p-3 flex justify-between items-center">
+          <div className="Nav-bar m-2 fixed z-50 w-full p-3 flex justify-between items-center pl-5 pr-10">
             <img src={CompLogo} alt="Logo" className="h-12 w-auto" />
 
             {/* Desktop Menu */}
@@ -482,7 +482,7 @@ function App() {
             </div>
 
           </div>
-          <div ref={bookingRef} className='Booking mt-5 blocK'>
+          <div ref={bookingRef} className='Booking mt-5 blocK xl:pl-22 xl:pr-22'>
             <div className='PatientJour02Header m:w-1/2 h-max '>
               <ScrambleText
               text="Your Competitors Are Already Using AI" 
