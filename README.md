@@ -1,5 +1,7 @@
 **OmniDent.ai Redesign**
 
+**LIVE HOSTED AT: https://omnidentredesignabdullahyounas.pages.dev/**
+
 A modern, responsive React.js landing page for OmniDent AI – showcasing features, patient journey automation, integrations, case studies, and pricing. The project uses smooth scrolling, animated text effects, and responsive design for desktop and mobile.
 
 
