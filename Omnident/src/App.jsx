@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { useEffect } from "react";
+import { useState, useRef, useEffect } from 'react'
+
 import CompLogo from './assets/Logo.svg'
 import Girl from './assets/Girl01.jpg'
 import Girl2 from './assets/Girl02.jpg'
@@ -9,6 +9,7 @@ import Boy from './assets/Boy.jpg'
 import Boy2 from './assets/Boy02.jpg'
 import Boy3 from './assets/Boy03.jpg'
 import Boy4 from './assets/Boy04.jpg'
+
 import { FaBars, FaPhone, FaArrowRight, FaTimes, FaBrain, FaBell } from 'react-icons/fa'
 import { FaMessage } from 'react-icons/fa6'
 import { PiWechatLogoDuotone } from "react-icons/pi";
@@ -17,14 +18,16 @@ import { BsCalendarHeart } from "react-icons/bs";
 import { LiaChartBarSolid } from "react-icons/lia";
 import { IoPeople } from "react-icons/io5";
 import { IoMdMail } from "react-icons/io";
+
 import Button from './Components/Button'
 import ConnectionCard from './Components/ConnectionCard'
 import ReviewCard from './Components/ReviewCard'
 import Cal, { getCalApi } from "@calcom/embed-react";
 import BackgroundFollower from './Components/BackgroundFollower';
 import ScrambleText from './Components/ScrambleText';
-import { useRef } from 'react';
 import "react-day-picker/style.css";
+
+
 
 function App() {  
   const bookingRef = useRef(null);
