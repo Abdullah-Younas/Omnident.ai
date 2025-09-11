@@ -200,7 +200,7 @@ function App() {
               <div className="flex w-full h-full ">
                 {/* Left side - Text */}
                 <div className="w-1/2 h-fullp-6">
-                  <h1 className="text-TextPrimary text-l font-bold w-full s:text-xl xl:text-5xl">
+                  <h1 className="text-OmniRed text-l font-bold w-full s:text-xl xl:text-5xl">
                     Your favourite tool for
                   </h1>
                   <h2 className="text-xs s:text-lg font-bold text-TextSecondary mt-2 xl:text-2xl">
